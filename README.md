@@ -1,4 +1,7 @@
 # PR Checker CI Action
+
+[![Python|main](../../actions/workflows/python.yml/badge.svg?branch=main)](../../actions/workflows/python.yml?branch=main)
+
 A PR checker CI Action for SUSE Security Team work. This is mainly useful for Proactive Team whitelisting submissions, but can be generally useful.
 
 It runs on all commits found in a PR, and performs the following checks:
