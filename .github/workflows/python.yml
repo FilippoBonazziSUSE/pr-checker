@@ -4,12 +4,12 @@ permissions:
 
 on:
   pull_request:
+    branches: [main]
     paths:
       - "**.py"
       - ".github/workflows/python.yml"
   push:
-    branches:
-      - '**'
+    branches: [main]
     paths:
       - "**.py"
       - ".github/workflows/python.yml"
