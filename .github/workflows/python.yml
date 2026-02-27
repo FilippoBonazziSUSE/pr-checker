@@ -15,7 +15,7 @@ on:
       - ".github/workflows/python.yml"
 
 jobs:
-  lint:
+  Python lint and format:
     runs-on: ubuntu-latest
     steps:
       - name: Check out source repository
