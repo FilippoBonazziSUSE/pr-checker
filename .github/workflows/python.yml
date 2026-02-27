@@ -1,0 +1,35 @@
+name: Python
+permissions:
+  contents: read
+
+on:
+  pull_request:
+    paths:
+      - "**.py"
+      - ".github/workflows/python.yml"
+  push:
+    branches:
+      - '**'
+    paths:
+      - "**.py"
+      - ".github/workflows/python.yml"
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: Lint with flake8
+        uses: py-actions/flake8@84ec6726560b6d5bd68f2a5bed83d62b52bb50ba # v2.3.0
+        with:
+          ignore: "E265,E266,E501,E402"
+          max-line-length: "120"
+      - name: Format with Black
+        uses: psf/black@6305bf1ae645ab7541be4f5028a86239316178eb # 26.1.0
+        with:
+          options: "--check --diff --color --line-length 119"
+      - name: Check imports with isort
+        uses: isort/isort-action@24d8a7a51d33ca7f36c3f23598dafa33f7071326 # v1.1.1
+        with:
+          configuration: "--check-only --diff --profile black"
