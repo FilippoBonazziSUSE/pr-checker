@@ -26,7 +26,7 @@ jobs:
           ignore: "E265,E266,E501,E402"
           max-line-length: "120"
       - name: Format with Black
-        uses: psf/black@6305bf1ae645ab7541be4f5028a86239316178eb # 26.1.0
+        uses: psf/black@c6755bb741b6481d6b3d3bb563c83fa060db96c9 # 26.3.1
         with:
           options: "--check --diff --color --line-length 119"
       - name: Check imports with isort
